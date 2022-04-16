@@ -1,0 +1,47 @@
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;500;700&display=swap"
+     rel="stylesheet" />
+<link rel="stylesheet" href="/tableStyle.css"> -->
+<% layout("layout/boilerplate") %>
+     <link rel="stylesheet" href="/tableStyle.css">
+
+     <body>
+          <main>
+               <table id="displayInvoicesTable">
+                    <thead>
+                         <tr>
+                              <th class="rowNum" id="rowNum">Види <br /> фактура</th>
+                              <th class="client" id="client">Клиент</th>
+
+                              <th class="invoiceDate" id="invoiceDate">Рок за плаќање</th>
+                              <th class="priceWithoutTax" id="priceWithoutTax">
+                                   Цена без <br />
+                                   ДДВ
+                              </th>
+
+                              <th class="tax" id="tax">ДДВ</th>
+                              <th class="invoiceTotalValue" id="invoiceTotalValue">Вредност на<br /> фактурата</th>
+                              <th class="payed" id="payed" colspan="2">Платено</th>
+                              <th class="delete" id="delete">Избриши</th>
+                         </tr>
+
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                         <tr>
+                              <td>Вкупно:</td>
+                              <td colspan="2"></td>
+                              <td id="totalWithoutTax">0</td>
+                              <td id="totalTax">0</td>
+                              <td id="total">0</td>
+                              <td colspan="4">
+                              </td>
+                         </tr>
+                    </tfoot>
+          </main>
+     </body>
+
+     <script src="myInvoices.js"></script>
+     <script src="totalCharts.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

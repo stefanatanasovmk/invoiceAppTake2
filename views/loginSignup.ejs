@@ -1,0 +1,127 @@
+<link rel="stylesheet" href="loginSingup.css">
+
+<body>
+     <div class="wrapper">
+          <div class="title-text">
+               <div class="title login">
+                    Најава
+               </div>
+               <div class="title signup">
+                    Регистрација
+               </div>
+
+          </div>
+          <div class="form-container">
+               <div class="slide-controls">
+                    <input type="radio" name="slider" id="login" checked>
+                    <input type="radio" name="slider" id="signup">
+                    <label for="login" class="slide login">Најави се</label>
+                    <label for="signup" class="slide signup">Регистрирај се</label>
+                    <div class="slide-tab"></div>
+               </div>
+               <div class="form-inner">
+                    <form action="/login" method="post" class="login">
+                         <div class="field">
+                              <input id="username" name="username" type="text" placeholder="Е-маил адреса"
+                                   autocomplete="username" required>
+                         </div>
+
+                         <div class="field">
+                              <input name="password" type="password" placeholder="Лозинка" autocomplete="password"
+                                   required>
+                         </div>
+                         <div class="pass-link">
+                              <a href="/forgotpassword">Заборавена лозинка</a>
+                         </div>
+                         <div class="field">
+                              <input class="loginBtn" type="submit" value="Влез"></input>
+                         </div>
+                    </form>
+
+                    <form action="/signup" method="post" class="signup">
+                         <div class="field">
+                              <input type="text" name="companyName" id="companyName" class="primaryTxt"
+                                   placeholder="Име на компанијата" required />
+                         </div>
+                         <div class="field">
+                              <input type="text" name="companyAddress" id="companyAddress" class="primaryTxt"
+                                   placeholder="Адреса" required />
+                         </div>
+                         <div class="field">
+                              <input type="tel" name="companyPhone" id="companyPhone" class="secondaryTxt"
+                                   placeholder="Тел. број" required />
+                         </div>
+                         <div class="field">
+                              <input type="email" name="email" id="companyEmail" class="secondaryTxt"
+                                   placeholder="Е-маил адреса" required />
+                         </div>
+                         <div class="field">
+                              <input type="text" name="companyBankAccount" id="bankAccount" class="secondaryTxt"
+                                   placeholder="Жиро сметка" required />
+                         </div>
+                         <div class="field">
+                              <input type="text" name="companyTaxNumber" id="companyTaxNumber" class="secondaryTxt"
+                                   placeholder="Даночен број" required />
+                         </div>
+                         <div class="field">
+                              <input type="password" name="password" class="secondaryTxt" placeholder="Лозинка"
+                                   required />
+                         </div>
+                         <div class="field">
+                              <input class="loginBtn" type="submit" value="Регистрирај се"></input>
+                         </div>
+                    </form>
+               </div>
+          </div>
+
+          <!-- 
+          <div id="signupForm" class="formDivs">
+
+               <form action="/signup" method="post">
+                    
+                    <input type="text" name="companyAddress" id="companyAddress" class="primaryTxt"
+                         placeholder="Адреса на компанијата" required />
+
+                    <label for="companyPhone">Тел:</label>
+                    <input type="tel" name="companyPhone" id="companyPhone" class="secondaryTxt" placeholder="Тел. број"
+                         required />
+                    <label for="companyEmail">Е-маил:</label>
+                    <input type="email" name="email" id="companyEmail" class="secondaryTxt" placeholder="Е-маил адреса"
+                         required />
+                    <label for="companyBankAccount">Жиро сметка:</label>
+                    <input type="text" name="companyBankAccount" id="bankAccount" class="secondaryTxt"
+                         placeholder="Жиро сметка" required />
+                    <label for="companyTaxNumber">Даночен број:</label>
+                    <input type="text" name="companyTaxNumber" id="companyTaxNumber" class="secondaryTxt"
+                         placeholder="Даночен број" required />
+
+                    <label for="password">Лозинка</label>
+                    <input type="password" name="password" id="password" class="secondaryTxt" placeholder="Лозинка"
+                         required />
+                    <button>Регистрирај Се</button>
+               </form>
+          </div> -->
+
+     </div>
+
+     </div>
+</body>
+
+<script>
+     const loginForm = document.querySelector("form.login")
+     const signupForm = document.querySelector("form.signup")
+     const loginBtn = document.querySelector("label.login")
+     const signupBtn = document.querySelector("label.signup")
+     const loginText = document.querySelector(".title-text .login")
+     const signupText = document.querySelector(".title-text .signup")
+     const form = document.querySelector(".form-inner")
+     // form.style.height = "70%"
+     signupBtn.addEventListener("click", () => {
+          loginForm.style.marginLeft = "-50%"
+          loginText.style.marginLeft = "-50%"
+     })
+     loginBtn.addEventListener("click", () => {
+          loginForm.style.marginLeft = "0%"
+          loginText.style.marginLeft = "0%"
+     })
+</script>

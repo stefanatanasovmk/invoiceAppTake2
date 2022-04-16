@@ -1,0 +1,163 @@
+<% layout("layout/boilerplate") %>
+     <link rel="stylesheet" href="/tableStyle.css">
+
+     <body>
+          <header>
+               <div id="companyDetails">
+                    <h2 class="clientDataHeader hidden-print">
+                         Податоци за компанијата
+                    </h2>
+                    <div class="companyMainInfo" id="companyMainInfo">
+                         <input type="text" name="companyName" id="companyName" class="primaryTxt"
+                              placeholder="Име на компанијата" required />
+                         <input type="text" name="companyAddress" id="companyAddress" class="primaryTxt"
+                              placeholder="Адреса на компанијата" required />
+
+                         <div class="inputBox">
+                              <label for="companyPhone">Тел:</label>
+                              <input type="tel" name="companyPhone" id="companyPhone" class="secondaryTxt"
+                                   placeholder="Тел. број" required />
+                         </div>
+                         <div class="inputBox">
+                              <label for="companyEmail">Е-маил:</label>
+                              <input type="email" name="companyEmail" id="companyEmail" class="secondaryTxt"
+                                   placeholder="Е-маил адреса" required />
+                         </div>
+                         <div class="inputBox">
+                              <label for="companyBankAccount">Жиро сметка:</label>
+                              <input type="text" name="companyBankAccount" id="bankAccount" class="secondaryTxt"
+                                   placeholder="Жиро сметка" required />
+                         </div>
+                         <div class="inputBox">
+                              <label for="companyTaxNumber">Даночен број:</label>
+                              <input type="text" name="companyTaxNumber" id="companyTaxNumber" class="secondaryTxt"
+                                   placeholder="Даночен број" required />
+                         </div>
+                    </div>
+          </header>
+          <main>
+               <div id="clientContainer">
+                    <div id="clientCompanyInfo">
+                         <h2 class="clientDataHeader hidden-print">
+                              Податоци за клиентот
+                         </h2>
+                         <div class="clientCompanyData">
+                              <input type="text" name="clientCompanyName" id="clientCompanyName" class=""
+                                   placeholder="Име на клиентот" required />
+                              <input type="text" name="clientCompanyAddress" id="clientCompanyAddress" class=""
+                                   placeholder="Адреса" required />
+                              <input type="tel" name="clientCompanyPhone" id="clientCompanyPhone" class=""
+                                   placeholder="Тел. број" required />
+                              <input type="email" name="clientCompanyEmail" id="clientCompanyEmail" class=""
+                                   placeholder="Е-маил" required />
+                         </div>
+                    </div>
+                    <div id="invoicePaymentInfo">
+                         <h2 class="clientDataHeader hidden-print">
+                              Податоци за фактурата
+                         </h2>
+                         <div class="invoiceDataContainer">
+                              <label for="invoiceNumber">Број на фактура:</label>
+                              <input type="text" name="invoiceNumber" id="invoiceNumber" class=""
+                                   placeholder="Број на фактура" required />
+                         </div>
+                         <div class="invoiceDataContainer">
+                              <label for="dateOfExecution">Датум на извршен промет:</label>
+                              <input type="date" name="dateOfExecution" id="dateOfExecution" class=""
+                                   placeholder="Датум на извршен промет" required />
+                         </div>
+                         <div class="invoiceDataContainer">
+                              <label for="invoiceDate">Датум на издавање:</label>
+                              <input type="date" name="invoiceDate" id="invoiceDate" class=""
+                                   placeholder="Датум на издавање" required />
+                         </div>
+                         <div class="invoiceDataContainer">
+                              <label for="paymentDate">Краен рок за плаќање:</label>
+                              <input type="date" name="paymentDate" id="paymentDate" class=""
+                                   placeholder="Датум на издавање" required />
+                         </div>
+
+                    </div>
+
+               </div>
+               <div id="companyInfoBtnDiv">
+                    <button class="checkBtn" id="companyAndInvoiceInputBtn"></button>
+               </div>
+               <table>
+                    <thead>
+                         <tr>
+                              <th class="redenBroj" id="redenBroj">Ред. <br /> бр.</th>
+                              <th class="opis" id="opis">Опис</th>
+                              <th class="unitMeasure unitMeasureHead" id="unitMeasure">E.M</th>
+                              <th class="unitPrice" id="unitPrice">Единечна <br />Цена</th>
+                              <th class="kolicina" id="kolicina">Кол.</th>
+                              <th class="cenaBezDDV" id="cenaBezDDV">
+                                   Цена без <br />
+                                   ДДВ
+                              </th>
+                              <th class="danStapka" id="danStapka">
+                                   Даночна <br />
+                                   стапка
+                              </th>
+                              <th class="ddv" id="ddv">Пресметан <br />ДДВ</th>
+                              <th class="iznos" id="iznos">Вкупна<br /> цена<br /> со ДДВ</th>
+                              <th class="btntoggle hidden-print" id="btntoggle"></th>
+                              <th class="deleteBtnRow hidden-print" id="deleteBtn"></th>
+                         </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                         <tr>
+                              <td>
+                                   <button id="newProduct" class="btnPrimary hidden-print">
+                                        <span class="btnIcon newProductIcon"></span>
+                                   </button>
+                              </td>
+                              <td colspan="6"></td>
+                              <td>Вкупно:</td>
+                              <td id="total"></td>
+                              <td colspan="2" class="hidden-print">
+                                   <button id="reset" class="btnPrimary hidden-print">
+                                        <span class="btnIcon resetIcon"></span>
+                                   </button>
+                              </td>
+                         </tr>
+                    </tfoot>
+
+               </table>
+          </main>
+          <div class="lowerBtnsDiv">
+
+               <div class="actionsBox hidden-print" id="actionsBox">
+                    <button id="btnPrint" class="btnPrimary">
+                         Испринтај ја фактурата
+                    </button>
+                    <button id="saveDataBtn"></button>
+               </div>
+          </div>
+
+
+
+     </body>
+     <script src="/table.js"></script>
+     <script src="/companyInfo.js"></script>
+
+
+     <!-- <script src="/index.js"></script> -->
+
+     <!-- <div class="legalInfo">
+                    <p>
+                         Рок на плаќање на фактурата е 30 дена.Во случај на
+                         задоцнување ќе ви пресметаме затезна камата. Рекламации се
+                         примаат во рок од 7 дена. Во случај на спор надлежен е судот
+                         во Свети Николе.
+                    </p>
+               </div>
+               <div class="legalSignatures">
+                    <p class="legalSignaturesItem">Издал</p>
+                    <p class="legalSignaturesItem">Примил</p>
+                    <p class="legalSignaturesItem">Фактурирал</p>
+                    <p class="legalSignaturesItem">Директор <br /></p>
+               </div> -->

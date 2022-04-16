@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/loginSingup.css">
+
+<body>
+     <div class="wrapper">
+
+
+
+          <h1>Внеси го кодот што го доби во Емаил</h1>
+
+
+
+          <div class="form-inner">
+               <form method="POST" action="/verifycode">
+                    <div class="field">
+                         <input id="code" name="code" type="text" placeholder="Код" required>
+                    </div>
+
+                    <div class="pass-link">
+                         <a href="/sendverificationcode">Испрати код повторно</a>
+                    </div>
+                    <div class="field">
+                         <input class="loginBtn" type="submit" value="Потврди"></input>
+                         <!-- <button class="loginBtn">Потврди</button> -->
+                    </div>
+               </form>
+          </div>
+     </div>
+</body>
+<style>
+     h1 {
+          width: 100%;
+          font-size: 15px;
+          font-weight: 600;
+          text-align: center;
+          color: rgb(129, 129, 129);
+     }
+</style>

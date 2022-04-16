@@ -1,0 +1,647 @@
+/* CSS RESET CODE */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    font-family: "Roboto Mono", monospace;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* TABLE PROPERTIES */
+main {
+    width: 80%;
+}
+
+th {
+    background-color: #fec001;
+    border-right: 1px solid black;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+/* Поправи ако има грешка у оригиналната фактура, одкоментирај га долното */
+th:nth-last-child(2),
+th:nth-last-child(1) {
+    border: none;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid black;
+    padding: 3px 2px 3px 2px;
+    height: 25px;
+}
+
+tbody>tr>td:nth-last-child(2),
+tbody>tr>td:nth-last-child(1) {
+    border: none;
+}
+
+tr:nth-child(2n) {
+    background-color: #b6b6b6;
+}
+
+tfoot>tr>td {
+    border-top: 1px solid black;
+    border-right: none;
+    font-weight: 700;
+    padding-top: 10px;
+    background-color: #fec001;
+    text-align: center;
+}
+
+input {
+    border: 1px solid #b6b6b6;
+    padding: 6px 12px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    color: #2e2e2e;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #b6b6b6;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.tableDataInput {
+    padding: 5px;
+    margin: 5px;
+}
+
+.tableDataInput.desc {
+    width: 90%;
+}
+
+
+.tableDataInput.taxRate {
+    margin: 0 auto;
+}
+
+/* Table heads width  */
+#redenBroj {
+    width: 5%;
+}
+
+
+
+/* BUTTONS */
+.checkBtn {
+    background: center no-repeat url(buttonSvg/checkBtn.svg);
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
+.editBtn {
+    background: center no-repeat url(buttonSvg/editBtn.svg);
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.deleteBtn {
+    background: center no-repeat url(buttonSvg/deleteBtn.svg);
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
+.editBtnOnInfo {
+    background: center / contain no-repeat url(buttonSvg/editBtn.svg);
+    height: 30px;
+    width: 30px;
+    border: none;
+    padding: 0;
+}
+
+.checkBtnOnInfo {
+    background: center / contain no-repeat url(buttonSvg/checkBtn.svg);
+    height: 30px;
+    width: 30px;
+    border: none;
+    padding: 0;
+}
+
+.editBtnOnInfo:hover,
+.checkBtnOnInfo:hover {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    transition: 0.2s;
+}
+
+/* HEADER */
+
+header {
+    width: 80%;
+    background-color: #6c99bb;
+    margin: 10px 0;
+}
+
+#companyDetails {
+    padding: 18px 12px;
+}
+
+.companyMainInfo {
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.companyInfo {
+    max-width: 60%;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.inputBox {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: baseline;
+}
+
+.primaryTxt {
+    flex-grow: 1;
+}
+
+.secondaryTxt {
+    flex-grow: 1;
+}
+
+/* CLIENT INFO ELEMENTS */
+#clientContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 15px 0 20px 0;
+}
+
+.clientDataHeader {
+    margin: 8px 0;
+}
+
+.clientCompanyData {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+}
+
+#invoicePaymentInfo {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.invoiceDataContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: baseline;
+}
+
+#invoiceNumber {
+    min-width: 200px;
+}
+
+.infoBtnDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+}
+
+#brNaFaktura,
+#kraenRok {
+    text-align: end;
+}
+
+#companyInfoBtnDiv {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 0 2em 2em;
+}
+
+/* PRINT, RESET, ADD BUTTONS */
+.lowerBtnsDiv {
+    width: 80%;
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.btnPrimary {
+    padding: 6px 4px;
+    border: none;
+    background-position-y: center;
+    background-color: transparent;
+}
+
+.btnIcon {
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+
+.resetIcon {
+    background: no-repeat url(buttonSvg/resetBtn.svg);
+}
+
+.newProductIcon {
+    background: no-repeat url(buttonSvg/addBtn.svg);
+}
+
+#btnPrint {
+    background: no-repeat url(buttonSvg/printBtn.svg);
+    background-position-y: center;
+    padding-left: 20px;
+    height: 40px;
+    border: 1px solid black;
+    transition: 0.3s ease-in-out;
+}
+
+#saveDataBtn {
+    background: no-repeat url(buttonSvg/saveInvoice.svg);
+    background-position-y: center;
+    padding-left: 20px;
+    height: 40px;
+    border: 1px solid black;
+    transition: 0.3s ease-in-out;
+}
+
+#saveAsNewBtn {
+    background: no-repeat url(buttonSvg/saveInvoice.svg);
+    background-position-y: center;
+    padding-left: 20px;
+    height: 40px;
+    border: 1px solid black;
+    transition: 0.3s ease-in-out;
+}
+
+#reset,
+#newProduct {
+    transition: 0.3s ease-in-out;
+}
+
+#reset:hover,
+#newProduct:hover {
+    background-color: #6e5814;
+    cursor: pointer;
+}
+
+#btnPrint:hover,
+#saveDataBtn:hover,
+#saveAsNewBtn:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+}
+
+.legalInfo {
+    border-top: 1px solid black;
+    padding: 15px 0;
+}
+
+.legalSignatures {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.legalSignaturesItem {
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding-bottom: 40px;
+    width: 25%;
+}
+
+.actionsBox {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.isCalculated .tableDataInput {
+    display: none;
+}
+
+.notCalculated .tableDataInput {
+    display: block;
+}
+
+.isCalculated .tableDataTxt {
+    display: block;
+    padding: 5px 0;
+}
+
+.notCalculated .tableDataTxt {
+    display: none;
+}
+
+tbody td:nth-child(2) {
+    width: 20%;
+    word-wrap: break-word;
+}
+
+/* Print css */
+@media print {
+    @page {
+        size: auto;
+        margin: 0;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    .hidden-print {
+        display: none !important;
+    }
+
+    input {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        font-size: 10pt;
+    }
+
+    #companyDetails {
+        padding: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid black;
+    }
+
+    .companyMainInfo {
+        max-width: 80%;
+    }
+
+    #companyName {
+        font-size: 14pt;
+    }
+
+    #clientCompanyName {
+        font-size: 13pt;
+    }
+
+    .clientCompanyData {
+        max-width: 100%;
+    }
+
+    label {
+        display: block;
+    }
+
+    a[href]:after {
+        content: none !important;
+    }
+
+    #clientContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .invoiceDataContainer {
+        margin-bottom: 5px;
+    }
+
+    /* table */
+    table {
+        table-layout: fixed;
+        /* makes the text-overflow function with percentage widths on the td or th */
+        width: 297mm - 2 * 10mm;
+        border-collapse: collapse;
+    }
+
+    td,
+    th {
+        width: 10%;
+        padding: 1mm 1mm 1mm 1mm;
+        border: 1px solid black;
+        /* overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; */
+        font-size: 10pt;
+        line-height: 1.15;
+    }
+
+    th:nth-child(2) {
+        width: 20%;
+        word-wrap: break-word;
+        overflow: initial;
+        text-overflow: initial;
+    }
+
+    thead,
+    td {
+        border: 1px solid black;
+    }
+
+    tfoot td {
+        border: none;
+    }
+}
+
+td {
+    transition: all 0.6s ease;
+}
+
+/* Invoices displayPage properties */
+
+#payed {
+    border-left: 1px solid black;
+
+}
+
+#notPayedTd {
+    border-right: none;
+}
+
+.payedBtn {
+    background: center no-repeat url(buttonSvg/thumbs-up.svg);
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
+.notPayedBtn {
+    background: center no-repeat url(buttonSvg/thumbs-down.svg);
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
+.seeInvoiceBtn {
+    background: center no-repeat url(buttonSvg/seeInvoiceBtn.svg);
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
+.totalRow {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 2%; */
+}
+
+.payedChartDiv,
+.unpayedChartDiv {
+    width: 40%;
+    height: 100%;
+}
+
+
+
+#displayInvoicesTable {
+    margin-top: 8%;
+}

@@ -1,0 +1,187 @@
+<link rel="stylesheet" href="/tableStyle.css">
+
+<%- layout("layout/boilerplate")%>
+
+     <body>
+
+          <main>
+
+               <div class="btnTop">
+                    <input class="changeInfoBtn" type="submit" name="" id="" value="Промени информации за компанијата">
+                    <input class="changePassBtn" type="submit" name="" id="" value="Промени лозинка">
+               </div>
+               <div id="allForms">
+                    <form action="/myprofile/changeuserinfo" method="post">
+
+                         <div class="inputsDivs info">
+
+                              <label for="companyName">Името на вашата компанија:</label>
+                              <input type="text" name="companyName" id="companyName" class="primaryTxt"
+                                   value="<%=user.companyName%>" />
+                              <label for="address">Адреса:</label>
+                              <input type="text" name="address" id="address" class="primaryTxt"
+                                   placeholder="Адреса на компанијата" value="<%=user.address%>" />
+                              <label for="username">Е-маил:</label>
+                              <input type="email" name="username" id="username" class="secondaryTxt"
+                                   placeholder="Е-маил адреса" value="<%=user.username%>" required />
+
+                         </div>
+
+                         <div class="inputsDivs info">
+                              <label for="tel">Телефонски број:</label>
+                              <input type="tel" name="tel" id="tel" class="secondaryTxt" placeholder="Тел. број"
+                                   value="<%=user.tel%>" />
+
+                              <label for="bankAccount">Жиро сметка</label>
+                              <input type="text" name="bankAccount" id="bankAccount" class="secondaryTxt"
+                                   placeholder="Жиро сметка" value="<%=user.bankAccount%>" />
+                              <label for="taxNumber">Даночен број:</label>
+                              <input type="text" name="taxNumber" id="taxNumber" class="secondaryTxt"
+                                   placeholder="Даночен број" value="<%=user.taxNumber%>" />
+                              <input type="submit" name="" id="" value="Потврди ги промените">
+
+                         </div>
+
+                    </form>
+                    <div class="inputsDivs passwordInfo">
+                         <form action="myprofile/changepass" method="post">
+                              <input type="password" name="oldPassword" id="oldPassword" placeholder="Стара лозинка"
+                                   required />
+                              <input type="password" name="newPassword1" id="newPassword1" placeholder="Нова лозинка"
+                                   required />
+                              <input type="password" name="newPassword2" id="newPassword2" class="newPassword"
+                                   placeholder="Потврди ја новата лозинка" required />
+                              <input type="submit" value="Промени ја лозинката">
+                         </form>
+                    </div>
+               </div>
+
+          </main>
+
+     </body>
+
+     <style>
+          body {
+               display: flex;
+               flex-direction: column;
+               justify-content: flex-start;
+               align-items: center;
+               line-height: 1;
+               font-family: "Roboto Mono", monospace;
+          }
+
+
+          main {
+               width: 80%;
+               /* height: 100vh; */
+               display: flex;
+               flex-direction: column;
+               justify-content: flex-start;
+               align-items: center;
+          }
+
+          .btnTop {
+               height: 5%;
+               width: 100%;
+               display: flex;
+               flex-direction: row;
+               justify-content: center;
+
+          }
+
+          .btnTop input {
+               width: 50%;
+               color: #FFF;
+               font-family: inherit;
+               text-align: center;
+               cursor: pointer;
+               border: 1px solid lightgray;
+
+               /* padding: 5%; */
+               margin: 0;
+               background: -webkit-linear-gradient(right, #FEC001, #e7be41);
+
+          }
+
+          .changePassBtn {
+               border-radius: 0px 5px 0 0;
+          }
+
+          .changeInfoBtn {
+               border-radius: 5px 0px 0 0;
+          }
+
+          #allForms {
+               width: 100%;
+               height: 50%;
+               background: #6C99BB;
+               display: flex;
+               flex-direction: row;
+               justify-content: center;
+               border-radius: 0 0 5px 5px;
+          }
+
+          form {
+               display: flex;
+               flex-direction: row;
+               justify-content: center;
+               align-items: flex-start;
+          }
+
+          .inputsDivs {
+               width: 40%;
+               height: 100%;
+               padding: 4%;
+          }
+
+          .inputsDivs input {
+               width: 100%;
+               border-radius: 5px;
+               font: inherit;
+          }
+
+          .inputsDivs input[type=submit] {
+               width: 100%;
+               color: #FFF;
+               /* font-size: 1.3em; */
+               text-align: center;
+               cursor: pointer;
+               border: 1px solid lightgray;
+               /* padding: 5%; */
+               background: -webkit-linear-gradient(right, #FEC001, #e7be41);
+          }
+
+
+          .passwordInfo {
+               display: none
+          }
+
+          .passwordInfo form {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+          }
+
+          /* .info {
+               display: none;
+          } */
+     </style>
+     <script>
+          const companyInfoDiv = document.querySelectorAll(".info")
+          const passwordInfo = document.querySelector(".passwordInfo")
+          const changeInfoBtn = document.querySelector(".changeInfoBtn")
+          const changePassBtn = document.querySelector(".changePassBtn")
+          changeInfoBtn.addEventListener("click", (e) => {
+               passwordInfo.style.display = "none"
+               for (let i of companyInfoDiv) {
+                    i.style.display = "block"
+               }
+          })
+          changePassBtn.addEventListener("click", () => {
+               passwordInfo.style.display = "block"
+               for (let i of companyInfoDiv) {
+                    i.style.display = "none"
+               }
+          })
+     </script>
