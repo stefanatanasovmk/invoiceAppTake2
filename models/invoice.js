@@ -32,11 +32,6 @@ const InvoiceSchema = new Schema({
      }
 })
 
-// InvoiceSchema.post("findOneAndDelete", async function (invoice) {
-//      const id = invoice.id
-//      const user = await User.findById(invoice.companyInfo)
-//      await user.deleteOne({ id: { $in: user.id } })
-//      console.log(user)
-// })
+
 
 module.exports = mongoose.model("Invoice", InvoiceSchema)
